@@ -4001,6 +4001,28 @@
                 prevEl: ".voucher__controls.swiper-button-prev",
                 nextEl: ".voucher__controls.swiper-button-next"
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                495: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                992: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                1268: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                }
+            },
             on: {}
         });
         if (document.querySelector(".partners__slider")) new core(".partners__slider", {
