@@ -2837,6 +2837,7 @@ h6 {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 @media (any-hover: hover) {
   .news__block:hover {
@@ -2845,6 +2846,9 @@ h6 {
   .news__block:hover .news__button {
     color: #fff;
     background-color: #023047;
+  }
+  .news__block:hover .news__block-image img {
+    transform: scale(1.1);
   }
 }
 .news__block-text {
@@ -2875,9 +2879,13 @@ h6 {
     left: 0.9375rem;
   }
 }
+.news__block-image {
+  overflow: hidden;
+}
 .news__block-image img {
   width: 100%;
   object-fit: cover;
+  transition: all 0.5s ease 0s;
 }
 .news__content {
   padding: 16px 20px 16px;
