@@ -523,7 +523,7 @@ h6 {
   visibility: hidden;
   opacity: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 47.99875em) {
   .voucher__slider .swiper-pagination-bullets {
     visibility: visible;
     opacity: 1;
@@ -541,10 +541,10 @@ h6 {
 }
 @media (max-width: 1310px) {
   .voucher__controls.swiper-button-prev {
-    left: 30px;
+    left: 5px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 47.99875em) {
   .voucher__controls.swiper-button-prev {
     display: none;
   }
@@ -556,10 +556,10 @@ h6 {
 }
 @media (max-width: 1310px) {
   .voucher__controls.swiper-button-next {
-    right: 30px;
+    right: 5px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 47.99875em) {
   .voucher__controls.swiper-button-next {
     display: none;
   }
@@ -2248,9 +2248,8 @@ h6 {
   }
 }
 .voucher__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 @media (max-width: 980px) {
   .voucher__wrapper {
@@ -2356,7 +2355,7 @@ h6 {
   font-weight: 600;
   border: 3px solid #FFF;
   width: 100%;
-  max-width: 470px;
+  max-width: 330px;
   transition: all 0.3s ease 0s;
   margin-bottom: 2rem;
 }
@@ -2492,7 +2491,6 @@ h6 {
   }
 }
 .voucher__slider-body {
-  gap: 10px;
   max-width: 470px;
   width: 100%;
   background-color: #fff;
@@ -2554,6 +2552,11 @@ h6 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+@media (max-width: 980px) {
+  .voucher__card {
+    display: block;
+  }
 }
 .voucher__card-image {
   margin-bottom: 2.5rem;
