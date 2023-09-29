@@ -1017,6 +1017,11 @@ h6 {
   }
 }
 
+.search-form__item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
 .search-form__btn {
   transition: all 0.3s ease 0s;
 }
@@ -1047,6 +1052,27 @@ h6 {
     font-size: 1.125rem;
   }
 }
+.search-form__input {
+  outline: none;
+  border-bottom: 1px solid #333;
+  padding: 6px 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 61.99875em) {
+  .search-form__input {
+    width: 0;
+  }
+}
+@media (min-width: 61.99875em) {
+  .search-form__input-open {
+    max-width: 100%;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .cart-header__icon {
   transition: all 0.3s ease 0s;
 }
@@ -1671,12 +1697,15 @@ h6 {
   padding: 16px 35px 16px 27px;
   max-width: 300px;
   display: flex;
+  align-items: center;
   position: relative;
   background-color: #fff;
 }
 @media (max-width: 29.99875em) {
   .hero__card {
     padding: 5px 15px 5px 15px;
+    left: -202px;
+    height: 145px;
   }
 }
 .hero__card-image {
@@ -1701,9 +1730,30 @@ h6 {
 }
 .card__content-title {
   font-weight: 600;
-  font-size: 1.5rem;
   line-height: 1.2916666667;
   margin-bottom: 0.5625rem;
+}
+@media (min-width: 75em) {
+  .card__content-title {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem )) {
+    .card__content-title {
+      font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.8181818182rem  +  0.9090909091vw , 1.5rem )) {
+    .card__content-title {
+      font-size: calc(1rem + 0.5 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .card__content-title {
+    font-size: 1rem;
+  }
 }
 .card__content-price {
   font-weight: 500;
@@ -2078,10 +2128,17 @@ h6 {
 }
 .best__card-image {
   margin-bottom: 1.25rem;
+  overflow: hidden;
 }
 .best__card-image img {
   width: 100%;
   object-fit: cover;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .best__card-image img:hover {
+    transform: scale(1.1);
+  }
 }
 .best__card-title {
   font-weight: 500;
