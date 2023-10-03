@@ -4001,28 +4001,6 @@
                 prevEl: ".voucher__controls.swiper-button-prev",
                 nextEl: ".voucher__controls.swiper-button-next"
             },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                },
-                495: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                },
-                768: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                },
-                992: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                },
-                1268: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                }
-            },
             on: {}
         });
         if (document.querySelector(".partners__slider")) new core(".partners__slider", {
@@ -4245,6 +4223,13 @@
         timeCount();
         setInterval(timeCount, 1e3);
     }));
+    window.onload = function() {
+        document.addEventListener("click", documentActions);
+        function documentActions(e) {
+            const targetElement = e.target;
+            if (targetElement.classList.contains("search-form__icon")) document.querySelector(".search-form__item").classList.toggle("search-form__item-open"); else if (!targetElement.closest(".search-form__item") && document.querySelector(".search-form__item.search-form__item-open")) document.querySelector(".search-form__item").classList.remove("search-form__item-open");
+        }
+    };
     window["FLS"] = true;
     isWebp();
     menuInit();
