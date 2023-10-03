@@ -837,7 +837,6 @@ h6 {
 .header__actions {
   display: flex;
   align-items: center;
-  position: relative;
   z-index: 5;
 }
 @media (min-width: 75em) {
@@ -1017,12 +1016,58 @@ h6 {
   }
 }
 
+.header {
+  position: relative;
+}
+
+.search-form__icon {
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .search-form__icon:hover {
+    color: #fd9999;
+  }
+}
+@media (min-width: 75em) {
+  .search-form__icon::before {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (font-size: clamp( 1.125rem , 0.9886363636rem  +  0.6818181818vw , 1.5rem )) {
+    .search-form__icon::before {
+      font-size: clamp( 1.125rem , 0.9886363636rem  +  0.6818181818vw , 1.5rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.125rem , 0.9886363636rem  +  0.6818181818vw , 1.5rem )) {
+    .search-form__icon::before {
+      font-size: calc(1.125rem + 0.375 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .search-form__icon::before {
+    font-size: 1.125rem;
+  }
+}
 .search-form__item {
+  position: absolute;
+  top: 77%;
+  right: 2.2%;
+  background: #fff;
+  max-width: 300px;
+  width: 100%;
+  height: 3rem;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  border: 1px solid #000;
+  transition: all 0.2s ease 0s;
 }
 .search-form__btn {
+  width: 60px;
   transition: all 0.3s ease 0s;
 }
 @media (any-hover: hover) {
@@ -1053,24 +1098,12 @@ h6 {
   }
 }
 .search-form__input {
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  text-transform: none;
   outline: none;
-  border-bottom: 1px solid #333;
-  padding: 6px 6px;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease 0s;
-}
-@media (max-width: 61.99875em) {
-  .search-form__input {
-    width: 0;
-  }
-}
-@media (min-width: 61.99875em) {
-  .search-form__input-open {
-    max-width: 100%;
-    visibility: visible;
-    opacity: 1;
-  }
 }
 
 .cart-header__icon {
@@ -1103,6 +1136,10 @@ h6 {
     font-size: 1.125rem;
   }
 }
+.search-form__item-open {
+  transform: scaleY(1);
+}
+
 .icon-menu {
   display: none;
 }
