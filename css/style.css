@@ -1053,7 +1053,6 @@ h6 {
 .search-form__item {
   position: absolute;
   top: 77%;
-  right: 2.2%;
   background: #fff;
   max-width: 300px;
   width: 100%;
@@ -3032,6 +3031,12 @@ h6 {
   margin-right: 20px;
   font-weight: 600;
   max-width: 130px;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .news__button:hover {
+    color: #fd9999;
+  }
 }
 @media (max-width: 29.99875em) {
   .news__button {
